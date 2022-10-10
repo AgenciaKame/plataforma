@@ -7,6 +7,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
       query: (credentials) => ({
         url: "/auth",
         method: "POST",
+        /* mode: 'no-cors', */
         body: { ...credentials },
       }),
     }),
