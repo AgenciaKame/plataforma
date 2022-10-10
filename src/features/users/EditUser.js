@@ -15,7 +15,7 @@ const EditUser = () => {
   if (!user)
     return (
       <div className="loading">
-        <ClipLoader color={"#63c0bb"} />;
+        <ClipLoader color={"#63c0bb"} />
       </div>
     );
 

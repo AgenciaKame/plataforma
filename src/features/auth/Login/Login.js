@@ -64,7 +64,7 @@ const Login = () => {
   if (isLoading)
     return (
       <div className="loading">
-        <ClipLoader color={"#63c0bb"} />;
+        <ClipLoader color={"#63c0bb"} />
       </div>
     );
 

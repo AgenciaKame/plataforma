@@ -224,7 +224,7 @@
 .unit-section > .unit-buttons > .options > button {
   height: 45px;
   width: 100%;
-  background-color: rgba(25, 151, 240, 0.3);
+  background-color: rgba(99, 192, 187, 0.8);
   border: none;
   font-family: var(--font-link);
   font-size: 16px;
@@ -236,7 +236,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(25, 151, 240, 0.5);
+  background-color: rgb(99, 192, 187);
   cursor: pointer;
 }
 

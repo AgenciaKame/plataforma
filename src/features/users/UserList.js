@@ -24,7 +24,7 @@ const UserList = () => {
   if (isLoading)
     content = (
       <div className="loading">
-        <ClipLoader color={"#63c0bb"} />;
+        <ClipLoader color={"#63c0bb"} />
       </div>
     );
   if (isError) {

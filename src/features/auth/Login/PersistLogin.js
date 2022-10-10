@@ -50,7 +50,7 @@ const PersistLogin = () => {
     /* console.log("loading"); */
     content = (
       <div className="loading">
-        <ClipLoader color={"#63c0bb"} />;
+        <ClipLoader color={"#63c0bb"} />
       </div>
     );
   } else if (isError) {
