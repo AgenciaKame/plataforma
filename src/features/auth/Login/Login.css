@@ -1,0 +1,109 @@
+.login-section {
+  background-image: url("../../../assets//Web\ estandar\ CANVAS.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-section-title {
+  margin-top: 150px;
+  text-align: center;
+}
+.login-section-title > h2 {
+  font-family: var(--font-coco-gothic);
+  font-size: 38px;
+  line-height: 42px;
+}
+.login-container {
+  width: 100%;
+}
+.login-form {
+  width: 80%;
+  max-width: 400px;
+  margin: 50px auto 75px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+.login-form > .form-options {
+  margin: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.login-form > .form-options > a {
+  font-family: var(--font-montserrat);
+  width: 40%;
+  color: #000000;
+  font-size: 14px;
+}
+.login-form > .form-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+}
+.login-form > .form-checkbox > .input-checkbox {
+  margin-right: 5px;
+}
+.login-form > .form-checkbox > label {
+  font-family: var(--font-montserrat);
+  color: #000000;
+  font-size: 14px;
+  line-height: 16px;
+}
+.login-form > .login-btn {
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+.login-form > .login-btn > button {
+  background-color: #63c0bb;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 120px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-montserrat);
+  color: #fff;
+  font-size: 18px;
+}
+.login-form > .login-btn > button > a {
+  font-family: var(--font-montserrat);
+  color: #fff;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .login-container {
+    width: 80%;
+  }
+  .login-section-title > h2 {
+    font-size: 45px;
+    line-height: 50px;
+  }
+  .login-form {
+    max-width: 450px;
+    padding: 30px 40px;
+  }
+  .login-form > .form-control {
+    padding: 15px 0;
+  }
+  .login-form > .form-options {
+    margin: 20px 0;
+  }
+  .login-form > .login-btn {
+    margin: 30px 0 20px;
+  }
+  .login-form > .login-btn > button {
+    padding: 10px 15px;
+  }
+}
+/* @media screen and (min-width: 1024px) {
+  .login-section {
+    background-image: url('../../assets//Web\ estandar\ CANVAS.jpg');
+  }
+} */

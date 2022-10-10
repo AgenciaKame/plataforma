@@ -1,0 +1,102 @@
+.welcome-image {
+  background-color: #68bcbc;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcome-image > img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+}
+.welcome-info {
+  margin: 50px 10%;
+}
+.welcome-info > .welcome-title {
+  text-align: center;
+}
+.welcome-info > .welcome-title > h2 {
+  font-family: var(--font-coco-gothic);
+  font-size: 38px;
+  line-height: 42px;
+}
+.welcome-info > .welcome-text {
+  text-align: center;
+}
+.welcome-info > .welcome-text > p {
+  font-family: var(--font-montserrat);
+  margin: 15px 0;
+  font-size: 17px;
+  line-height: 20px;
+}
+.welcome-info > .welcome-btn {
+  margin: 25px 0;
+  text-align: center;
+}
+.welcome-info > .welcome-btn > button {
+  width: 158px;
+  padding: 8px 13px;
+  text-align: center;
+  background-color: #63c0bb;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+.welcome-info > .welcome-btn > button > a {
+  font-family: var(--font-montserrat);
+  color: #fff;
+  font-size: 18px;
+}
+.welcome-info > .welcome-btn > hr {
+  width: 140px;
+  margin: 15px auto;
+  color: #707070;
+}
+
+@media screen and (min-width: 768px) {
+  .welcome-info > .welcome-title {
+    margin: 20px 0;
+  }
+  .welcome-info > .welcome-btn {
+    margin: 30px 0 25px;
+  } 
+}
+
+@media screen and (min-width: 1024px) {
+  .welcome-section {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr;
+  }
+  .welcome-image {
+    width: 100%;
+    height: 100vh;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .welcome-info {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: center;
+  }
+  .welcome-info > .welcome-title {
+    margin: 25px 0;
+  }
+  .welcome-info > .welcome-title > h2 {
+    font-size: 38px;
+    line-height: 41px;
+  }
+  .welcome-info > .welcome-text {
+    margin: 35px 0;
+  }
+  .welcome-info > .welcome-text > p {
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
