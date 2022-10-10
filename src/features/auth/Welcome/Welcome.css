@@ -16,17 +16,19 @@
 }
 .welcome-info > .welcome-title {
   text-align: center;
+  margin: 15px 0;
 }
 .welcome-info > .welcome-title > h2 {
-  font-family: var(--font-coco-gothic);
+  font-family: var(--font-title);
   font-size: 38px;
   line-height: 42px;
 }
 .welcome-info > .welcome-text {
   text-align: center;
+  padding: 15px 0;
 }
 .welcome-info > .welcome-text > p {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-paragraph);
   margin: 15px 0;
   font-size: 17px;
   line-height: 20px;
@@ -36,8 +38,7 @@
   text-align: center;
 }
 .welcome-info > .welcome-btn > button {
-  width: 158px;
-  padding: 8px 13px;
+  padding: 10px 15px;
   text-align: center;
   background-color: #63c0bb;
   border-radius: 20px;
@@ -45,7 +46,7 @@
   cursor: pointer;
 }
 .welcome-info > .welcome-btn > button > a {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-link);
   color: #fff;
   font-size: 18px;
 }

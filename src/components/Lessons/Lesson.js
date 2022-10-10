@@ -6,7 +6,7 @@ import unitOne from "../../assets/Bitacora de recorrido.png";
 const Lesson = () => {
   const { title } = useParams();
   const { pathname } = useLocation();
- 
+
   let paths = pathname.split("/");
   paths.splice(0, 2);
   let content;
@@ -16,7 +16,11 @@ const Lesson = () => {
         <UnitBox unitTitle="Título Uno" image={unitOne} pathname={pathname} />
         <UnitBox unitTitle="Título Dos" image={unitOne} pathname={pathname} />
         <UnitBox unitTitle="Título Tres" image={unitOne} pathname={pathname} />
-        <UnitBox unitTitle="Título Cuatro" image={unitOne} pathname={pathname} />
+        <UnitBox
+          unitTitle="Título Cuatro"
+          image={unitOne}
+          pathname={pathname}
+        />
         <UnitBox unitTitle="Título Cinco" image={unitOne} pathname={pathname} />
       </>
     );
@@ -35,7 +39,11 @@ const Lesson = () => {
         <UnitBox unitTitle="Título Uno" image={unitOne} pathname={pathname} />
         <UnitBox unitTitle="Título Dos" image={unitOne} pathname={pathname} />
         <UnitBox unitTitle="Título Tres" image={unitOne} pathname={pathname} />
-        <UnitBox unitTitle="Título Cuatro" image={unitOne} pathname={pathname} />
+        <UnitBox
+          unitTitle="Título Cuatro"
+          image={unitOne}
+          pathname={pathname}
+        />
       </>
     );
   }
@@ -54,7 +62,11 @@ const Lesson = () => {
         <UnitBox unitTitle="Título Uno" image={unitOne} pathname={pathname} />
         <UnitBox unitTitle="Título Dos" image={unitOne} pathname={pathname} />
         <UnitBox unitTitle="Título Tres" image={unitOne} pathname={pathname} />
-        <UnitBox unitTitle="Título Cuatro" image={unitOne} pathname={pathname} />
+        <UnitBox
+          unitTitle="Título Cuatro"
+          image={unitOne}
+          pathname={pathname}
+        />
         <UnitBox unitTitle="Título Cinco" image={unitOne} pathname={pathname} />
       </>
     );
@@ -70,10 +82,12 @@ const Lesson = () => {
   return (
     <>
       <Directory title={title} /> {/* paths={paths} pathname={pathname} */}
-      <div className="lesson-title">
-        <h2>{title}</h2>
+      <div className="lesson-section">
+        <div className="lesson-title">
+          <h2>{title}</h2>
+        </div>
+        <div className="units-grid">{content}</div>
       </div>
-      <div className="units-grid">{content}</div>
     </>
   );
 };

@@ -7,7 +7,8 @@ import usePersist from "../../../hooks/usePersist";
 import InputForm from "../../../components/InputForm/InputForm";
 import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
-import PulseLoader from "react-spinners/PulseLoader";
+import ClipLoader from "react-spinners/ClipLoader";
+import * as Unicons from "@iconscout/react-unicons";
 import "./Login.css";
 
 const Login = () => {
@@ -17,6 +18,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [persist, setPersist] = usePersist();
+  const [aviso, setAviso] = useState(true);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -59,11 +61,31 @@ const Login = () => {
 
   const errClass = errMsg ? "errmsg" : "offscreen";
 
-  if (isLoading) return <PulseLoader color={'#fff'} />;
+  if (isLoading)
+    return (
+      <div className="loading">
+        <ClipLoader color={"#63c0bb"} />;
+      </div>
+    );
+
   return (
     <>
       <Header />
       <div className="login-section">
+        {aviso === true && (
+          <div className="aviso-momentaneo" id="aviso">
+            <button onClick={() => setAviso(false)}>
+              <Unicons.UilTimes size={20} />
+            </button>
+            <p>Podés ingresar con:</p>
+            <p>
+              Email: <strong>prueba@gmail</strong>
+            </p>
+            <p>
+              Clave: <strong>kame2022</strong>
+            </p>
+          </div>
+        )}
         <div className="login-container">
           <div className="login-section-title">
             <h2>¿Comenzamos?</h2>
@@ -72,39 +94,41 @@ const Login = () => {
             {errMsg}
           </p>
           <form className="login-form" onSubmit={handleSubmit}>
-            <InputForm
-              name="email"
-              type="email"
-              reff={userRef}
-              value={email}
-              onChange={handleUserInput}
-              placeholder="Ingresa tu email"
-              label="Email"
-            />
-            <InputForm
-              name="password"
-              type="password"
-              value={password}
-              onChange={handlePassword}
-              placeholder="Ingresa tu contraseña"
-              label="Contraseña"
-            />
-            <div className="form-options">
-              <Link to="/signup">Registrarse</Link>
-              <Link to="/">¿Olvidaste la contraseña?</Link>
-            </div>
-            <div className="form-checkbox">
-              <input
-                type="checkbox"
-                className="input-checkbox"
-                id="persist"
-                onChange={handleToggle}
-                checked={persist}
+            <div className="form-content">
+              <InputForm
+                name="email"
+                type="email"
+                reff={userRef}
+                value={email}
+                onChange={handleUserInput}
+                placeholder="prueba@gmail.com"
+                label="Email"
               />
-              <label htmlFor="persist">Guardar última sesión</label>
-            </div>
-            <div className="login-btn">
-              <button>Ingresar</button>
+              <InputForm
+                name="password"
+                type="password"
+                value={password}
+                onChange={handlePassword}
+                placeholder="kame2022"
+                label="Contraseña"
+              />
+              <div className="form-options">
+                <Link to="/signup">Registrarse</Link>
+                <Link to="/">¿Olvidaste la contraseña?</Link>
+              </div>
+              <div className="form-checkbox">
+                <input
+                  type="checkbox"
+                  className="input-checkbox"
+                  id="persist"
+                  onChange={handleToggle}
+                  checked={persist}
+                />
+                <label htmlFor="persist">Mantener sesión</label>
+              </div>
+              <div className="login-btn">
+                <button>Ingresar</button>
+              </div>
             </div>
           </form>
         </div>

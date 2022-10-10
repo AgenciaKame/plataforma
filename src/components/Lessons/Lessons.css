@@ -3,7 +3,7 @@
   margin: 120px auto 100px;
 }
 .lessons-title > h2 {
-  font-family: var(--font-coco-gothic-bold);
+  font-family: var(--font-title);
   font-weight: bold;
   font-size: 30px;
   line-height: 33px;
@@ -15,16 +15,16 @@
   margin-top: 50px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 100%);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+  justify-content: center;
   justify-items: center;
   gap: 40px;
 }
 .lesson-card {
   width: 100%;
-  max-width: 360px;
   height: 210px;
   border-radius: 20px;
-  box-shadow: 4px 10px 10px rgb(155 153 152 / 60%);
+  box-shadow: 2px 7px 2px rgb(207 206 206 / 70%);
 }
 .lesson-card > a {
   position: relative;
@@ -82,7 +82,7 @@
   position: absolute;
   left: 6%;
   bottom: 7%;
-  font-family: var(--font-coco-gothic-bold);
+  font-family: var(--font-subtitle);
   font-weight: bold;
   font-size: 30px;
   line-height: 33px;
@@ -99,7 +99,7 @@
   flex-wrap: wrap;
   gap: 5px;
   text-transform: uppercase;
-  font-family: var(--font-montserrat);
+  font-family: var(--font-link);
   font-size: 12px;
   line-height: 15px;
   cursor: pointer;
@@ -114,7 +114,7 @@
   margin-top: 30px;
 }
 .lesson-title > h2 {
-  font-family: var(--font-coco-gothic-bold);
+  font-family: var(--font-title);
   font-weight: bold;
   font-size: 30px;
   line-height: 34px;
@@ -151,14 +151,14 @@
   object-fit: cover;
 }
 .box-unit > a > h3 {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-subtitle);
   font-size: 22px;
   line-height: 25px;
   color: #fff;
   text-align: center;
 }
 .box-unit > a > p {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-paragraph);
   text-align: center;
   color: #fff;
   font-size: 14px;
@@ -166,7 +166,7 @@
   padding: 0 5%;
 }
 .box-unit > a > span {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-paragraph);
   font-size: 11px;
   line-height: 13px;
   color: #fff;
@@ -200,13 +200,13 @@
   text-align: center;
 }
 .unit-section > .unit-title > h2 {
-  font-family: var(--font-coco-gothic-bold);
+  font-family: var(--font-title);
   font-weight: bold;
   font-size: 30px;
   line-height: 34px;
 }
 .unit-section > .unit-text {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-paragraph);
   font-size: 18px;
   line-height: 28px;
   text-align: left;
@@ -226,7 +226,7 @@
   width: 100%;
   background-color: rgba(25, 151, 240, 0.3);
   border: none;
-  font-family: var(--font-raleway);
+  font-family: var(--font-link);
   font-size: 16px;
   font-weight: bold;
 }
@@ -240,25 +240,65 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 540px) {
+  .box-unit {
+    width: 80%;
+  }
+  .box-unit > a {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .lessons-grid {
-    grid-template-columns: repeat(auto-fit, 280px);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+  }
+  .lesson-card {
+    height: 230px;
+  }
+  .lesson-section {
+    min-height: 70vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  .lesson-title {
+    margin-top: 50px;
+  }
+  .units-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+  }
+  .box-unit {
+    width: 100%;
+  }
+  .unit-video {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .unit-video > iframe {
+    height: 525px;
+  }
+  .unit-section > .unit-title {
+    text-align: left;
   }
 }
 @media screen and (min-width: 1024px) {
-  .lessons-grid {
-    grid-template-columns: repeat(auto-fit, 320px);
-    justify-content: center;
+  .units-grid {
+    gap: 50px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .lessons-grid {
-    grid-template-columns: repeat(auto-fit, 360px);
-    justify-content: center;
-    gap: 60px;
-  }
   .lesson-card {
-    height: 250px;
+    width: 80%;
+    height: 230px;
+  }
+  .lesson-card > a {
+    width: 100%;
+  }
+  .box-unit {
+    max-width: 400px;
   }
 }

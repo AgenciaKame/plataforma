@@ -1,15 +1,23 @@
-.errmsg {
-  display: inline-block;
-  background-color: #ccc;
-  color: firebrick;
-  padding: 0.25em;
-  margin-bottom: 0.5em;
-}
 .form-options.options-signup {
   margin: 20px auto;
+  text-align: center;
 }
 .form-options.options-signup > a {
   width: 80%;
+}
+.login-btn {
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+.login-btn > button {
+  background-color: #63c0bb;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-link);
+  color: #fff;
+  font-size: 18px;
 }
 .form__input--incomplete { /* i doesn't work*/
   border: 1px solid #f00;

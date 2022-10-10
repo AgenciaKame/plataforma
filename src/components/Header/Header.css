@@ -52,7 +52,7 @@
 .nav-menu-modal > ul > li > a {
   display: flex;
   align-items: center;
-  font-family: var(--font-montserrat);
+  font-family: var(--font-link);
   font-size: 18px;
   color: #fff;
 }

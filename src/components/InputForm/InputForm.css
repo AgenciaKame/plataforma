@@ -4,13 +4,13 @@
   flex-direction: column;
 }
 .form-control > label {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-paragraph);
   font-size: 18px;
   margin: 10px 0;
   color: #245373;
 }
 .form-control > input {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-paragraph);
   font-size: 16px;
   height: 40px;
   border-radius: 5px;
@@ -18,12 +18,12 @@
   outline: none;
 }
 .form-control > input::placeholder {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-paragraph);
   position: relative;
   left: 10px;
 }
 .form-control > input:focus {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-paragraph);
   border-bottom: 5px solid #63C0BB;
 }
 .form-control > input:focus-visible {

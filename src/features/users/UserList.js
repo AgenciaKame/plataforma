@@ -1,19 +1,19 @@
 import { useGetUsersQuery } from "./usersApiSlice";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import User from "./User";
-import PulseLoader from "react-spinners/PulseLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 import useTitle from "../../hooks/useTitle";
-import './users.css'
+import "./users.css";
 
 const UserList = () => {
-  useTitle('Agencia Kame - Usuarios')
+  useTitle("Agencia Kame - Usuarios");
   const {
     data: users,
     isLoading,
     isSuccess,
     isError,
     error,
-  } = useGetUsersQuery('usersList', {
+  } = useGetUsersQuery("usersList", {
     pollingInterval: 60000,
     refetchOnFocus: true,
     refetchOnMountOrArgChange: true,
@@ -21,14 +21,20 @@ const UserList = () => {
 
   let content;
 
-  if (isLoading) content = <PulseLoader color={'#fff'} />;
+  if (isLoading)
+    content = (
+      <div className="loading">
+        <ClipLoader color={"#63c0bb"} />;
+      </div>
+    );
   if (isError) {
     content = <p className="errmsj">{error?.data?.message}</p>;
   }
   if (isSuccess) {
     const { ids } = users;
 
-    const tableContent = ids?.length && ids.map((userId) => <User key={userId} userId={userId} />)
+    const tableContent =
+      ids?.length && ids.map((userId) => <User key={userId} userId={userId} />);
 
     content = (
       <table className="table table--users">
@@ -57,7 +63,7 @@ const UserList = () => {
       </div>
       {content}
       <div className="add-new-user">
-        <Link to='/dash/usuarios/registro'>
+        <Link to="/dash/usuarios/registro">
           <button>Nuevo usuario</button>
         </Link>
       </div>

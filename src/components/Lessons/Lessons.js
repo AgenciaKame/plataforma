@@ -15,7 +15,7 @@ const CardLesson = ({ image, title, children }) => {
       <Link to={`${pathname}/${title}`}>
         {image !== null ? (
           <>
-            <img src={image} alt={title} />
+            <img src={image} alt={title} loading='lazy' />
             <div className="lesson-box-transparence"></div>
           </>
         ) : (

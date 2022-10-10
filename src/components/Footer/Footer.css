@@ -27,7 +27,7 @@
   margin-right: 5px;
 }
 .footer-copy > p {
-  font-family: var(--font-raleway);
+  font-family: var(--font-paragraph);
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;

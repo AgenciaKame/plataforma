@@ -5,7 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import "./Header.css";
 import logoLetter from "../../assets/logo-letters.png";
 import * as Unicons from "@iconscout/react-unicons";
-import PulseLoader from "react-spinners/PulseLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 
 /* const DASH_REGEX = /^\/dash(\/)?$/;
 const NOTES_REGEX = /^\/dash\/notes(\/)?$/;
@@ -24,7 +24,7 @@ const LinkRouter = ({ link, name, children, setMenuOpened }) => {
 const LinkNav = ({ link, name, children, setMenuOpened }) => {
   return (
     <li onClick={() => setMenuOpened(false)}>
-      <a href={link} target='__Blank'>
+      <a href={link} target="__Blank">
         {children}
         <span>{name}</span>
       </a>
@@ -51,7 +51,12 @@ const Header = () => {
     if (isSuccess) navigate("/");
   }, [isSuccess, navigate]);
 
-  if (isLoading) return <PulseLoader color={'#fff'} />
+  if (isLoading)
+    return (
+      <div className="loading">
+        <ClipLoader color={"#63c0bb"} />;
+      </div>
+    );
 
   if (isError) return <p>Error: {error.data?.message}</p>;
 
@@ -64,7 +69,7 @@ const Header = () => {
     <header className="header_platform">
       <nav className={`nav-platform ${scroll ? "nav-scroll" : null}`}>
         <div className="nav-logo">
-          <Link to={isLogged ? '/dash' : '/login'}>
+          <Link to={isLogged ? "/dash" : "/login"}>
             <img src={logoLetter} alt="logo" />
           </Link>
         </div>
@@ -79,7 +84,11 @@ const Header = () => {
         <div className="nav-menu-modal">
           <ul>
             {isAdmin && (
-              <LinkRouter name="Usuarios" link="/dash/usuarios" setMenuOpened={setMenuOpened} >
+              <LinkRouter
+                name="Usuarios"
+                link="/dash/usuarios"
+                setMenuOpened={setMenuOpened}
+              >
                 <Unicons.UilCreateDashboard color="#ffffff" />
               </LinkRouter>
             )}

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useGetUsersQuery } from "./usersApiSlice";
 import EditUserForm from "./EditUserForm";
-import PulseLoader from "react-spinners/PulseLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const EditUser = () => {
   const { id } = useParams();
@@ -12,9 +12,14 @@ const EditUser = () => {
     }),
   });
 
-  if (!user) return <PulseLoader color={'#fff'} />
+  if (!user)
+    return (
+      <div className="loading">
+        <ClipLoader color={"#63c0bb"} />;
+      </div>
+    );
 
-  const content = <EditUserForm user={user} />
+  const content = <EditUserForm user={user} />;
 
   return (
     <div className="edit__user">
