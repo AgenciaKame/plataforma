@@ -35,6 +35,11 @@
   align-items: center;
   cursor: pointer;
 }
+.nav-menu > span {
+  font-family: var(--font-body);
+  font-size: 20px;
+    color: #fff;
+}
 .nav-menu-modal {
   background-color: rgba(99, 192, 187, 0.8);
   margin: 1px 10% 0 auto;

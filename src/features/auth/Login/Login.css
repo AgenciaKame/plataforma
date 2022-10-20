@@ -32,30 +32,63 @@
   padding: 20px;
 }
 .login-form > .form-content > .form-options {
-  margin: 10px 0;
+  margin: 20px 0 10px;
   text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .login-form > .form-content > .form-options > a {
   font-family: var(--font-link);
-  width: 40%;
-  color: #000000;
-  font-size: 14px;
+  font-weight: 300;
+  color: #245373;
+  font-size: 13px;
 }
 .login-form > .form-content > .form-checkbox {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  margin: 15px auto;
+  margin: 15px 0 20px;
 }
 .login-form > .form-content > .form-checkbox > .input-checkbox {
-  margin-right: 5px;
+  display: none;
+}
+.login-form > .form-content > .form-checkbox > .input-checkbox + label:before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  float: left;
+  margin: 0 0.5em 0 0;
+  border: 2px solid #ccc;
+  background: #fff;
+}
+.login-form
+  > .form-content
+  > .form-checkbox
+  > .input-checkbox:checked
+  + label:before {
+  border-color: #63c0bb;
+}
+.login-form
+  > .form-content
+  > .form-checkbox
+  > .input-checkbox:checked
+  + label:after {
+  content: "";
+  width: 6px;
+  height: 3px;
+  border: 2px solid #63c0bb;
+  float: left;
+  margin-left: -1.4em;
+  border-right: 0;
+  border-top: 0;
+  margin-top: 0.28em;
+  transform: rotate(-55deg);
 }
 .login-form > .form-content > .form-checkbox > label {
   font-family: var(--font-paragraph);
-  color: #000000;
+  color: #245373;
   font-size: 14px;
   line-height: 16px;
 }
@@ -143,7 +176,7 @@
     margin: 20px 0;
   }
   .login-form > .form-content > .login-btn {
-    margin: 30px 0 20px;
+    margin: 30px 0;
   }
   .login-form > .form-content > .login-btn > button {
     padding: 10px 15px;

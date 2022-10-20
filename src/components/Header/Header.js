@@ -7,10 +7,6 @@ import logoLetter from "../../assets/logo-letters.png";
 import * as Unicons from "@iconscout/react-unicons";
 import ClipLoader from "react-spinners/ClipLoader";
 
-/* const DASH_REGEX = /^\/dash(\/)?$/;
-const NOTES_REGEX = /^\/dash\/notes(\/)?$/;
-const USERS_REGEX = /^\/dash\/users(\/)?$/; */
-
 const LinkRouter = ({ link, name, children, setMenuOpened }) => {
   return (
     <li onClick={() => setMenuOpened(false)}>
@@ -35,7 +31,7 @@ const LinkNav = ({ link, name, children, setMenuOpened }) => {
 const Header = () => {
   const [isMenuOpened, setMenuOpened] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const { isAdmin, isLogged } = useAuth();
+  const { isAdmin, isLogged } = useAuth(); /* name, lastName */
   const navigate = useNavigate();
 
   const [sendLogout, { isLoading, isSuccess, isError, error }] =
@@ -60,11 +56,6 @@ const Header = () => {
 
   if (isError) return <p>Error: {error.data?.message}</p>;
 
-  /* let dashClass = null
-  if (!DASH_REGEX.test(pathname) && !NOTES_REGEX.test(pathname) && !USERS_REGEX.test(pathname)) {
-      dashClass = "dash-header__container--small"
-  } */
-
   return (
     <header className="header_platform">
       <nav className={`nav-platform ${scroll ? "nav-scroll" : null}`}>
@@ -77,6 +68,7 @@ const Header = () => {
           className="nav-menu"
           onClick={() => setMenuOpened((current) => !current)}
         >
+          {/* {isLogged ? <span>{name.charAt(0).toUpperCase()}{lastName.charAt(0).toUpperCase()}</span> : <Unicons.UilUser color="#ffffff" />} */}
           <Unicons.UilUser color="#ffffff" />
         </div>
       </nav>

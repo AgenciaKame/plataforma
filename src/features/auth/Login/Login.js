@@ -112,10 +112,6 @@ const Login = () => {
                 placeholder="kame2022"
                 label="Contraseña"
               />
-              <div className="form-options">
-                <Link to="/signup">Registrarse</Link>
-                <Link to="/">¿Olvidaste la contraseña?</Link>
-              </div>
               <div className="form-checkbox">
                 <input
                   type="checkbox"
@@ -124,10 +120,14 @@ const Login = () => {
                   onChange={handleToggle}
                   checked={persist}
                 />
-                <label htmlFor="persist">Mantener sesión</label>
+                <label htmlFor="persist">Recordar</label>
               </div>
               <div className="login-btn">
                 <button>Ingresar</button>
+              </div>
+              <div className="form-options">
+                {/* <Link to="/signup">Registrarse</Link> */}
+                <Link to="/">¿Olvidaste la contraseña?</Link>
               </div>
             </div>
           </form>

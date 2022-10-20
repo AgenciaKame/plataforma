@@ -22,7 +22,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   /* const [validPassword, setValidPassword] = useState(false); */
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [roles, setRoles] = useState(["Nivel 1"]);
+  const [roles, setRoles] = useState(["Curso 1"]);
 
 /*   useEffect(() => {
     setValidEmail(USER_REGEX.test(email));
@@ -39,7 +39,7 @@ const Signup = () => {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-      setRoles(["Nivel 1"]);
+      setRoles(["Curso 1"]);
       navigate("/dash/usuarios");
     }
   }, [isSuccess, navigate]);

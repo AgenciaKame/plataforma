@@ -37,7 +37,21 @@ const UserList = () => {
       ids?.length && ids.map((userId) => <User key={userId} userId={userId} />);
 
     content = (
-      <table className="table table--users">
+      <div className="users-dashboard">
+        <div className="dashboard-title">
+          <h2>Dashboard</h2>
+        </div>
+        <div className="row row-headings">
+          <div className="head">Usuario</div>
+          <div className="head center">Roles</div>
+          <div className="head center">Editar</div>
+        </div>
+        {tableContent}
+      </div>   
+    );
+  }
+
+/*   <table className="table table--users">
         <thead className="table__thead">
           <tr>
             <th scope="col" className="table__th user__username">
@@ -52,19 +66,17 @@ const UserList = () => {
           </tr>
         </thead>
         <tbody>{tableContent}</tbody>
-      </table>
-    );
-  }
+      </table> */
 
   return (
     <div className="userlist">
-      <div className="table--title">
+      {/* <div className="table--title">
         <h2>Dashboard</h2>
-      </div>
+      </div> */}
       {content}
       <div className="add-new-user">
         <Link to="/dash/usuarios/registro">
-          <button>Nuevo usuario</button>
+          <button>Añadir usuario</button>
         </Link>
       </div>
     </div>

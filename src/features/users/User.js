@@ -32,25 +32,35 @@ const User = ({ userId }) => {
       </ul>
     );
 
-    const cellStatus = user.active ? "" : "table__cell--inactive";
-
     return (
-      <tr className="table__row user">
-        <td className={`table__cell table__user ${cellStatus}`}>
+      <div className="row row-user">
+        <div className="body-user mr-1">
           {user.name} {user.lastName}
-        </td>
-        <td className={`table__cell table__roles ${cellStatus}`}>
-          {userRolesList}
-        </td>
-        <td className={`table__cell table__edit ${cellStatus}`}>
-          <button className="icon-button table__button" onClick={handleEdit}>
+        </div>
+        <div className="body-user center">{userRolesList}</div>
+        <div className="body-user center">
+          <button onClick={handleEdit}>
             <Unicons.UilEdit color="#000000" />
           </button>
-        </td>
-      </tr>
+        </div>
+      </div>
     );
   } else return null;
 };
+
+/* <tr className="table__row user">
+<td className={`table__cell table__user`}>
+  {user.name} {user.lastName}
+</td>
+<td className={`table__cell table__roles`}>
+  {userRolesList}
+</td>
+<td className={`table__cell table__edit`}>
+  <button className="icon-button table__button" onClick={handleEdit}>
+    <Unicons.UilEdit color="#000000" />
+  </button>
+</td>
+</tr> */
 
 const memoizedUser = memo(User);
 

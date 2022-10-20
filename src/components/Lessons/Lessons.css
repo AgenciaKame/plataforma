@@ -9,7 +9,6 @@
   line-height: 33px;
   display: block;
   width: fit-content;
-  border-bottom: 2px solid rgba(112, 112, 112, 0.8);
 }
 .lessons-grid {
   margin-top: 50px;
@@ -250,6 +249,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .section-lessons {
+    margin-top: 150px;
+  }
+  .lessons-title {
+    margin-bottom: 80px;
+  }
   .lessons-grid {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
@@ -265,6 +270,9 @@
   .lesson-title {
     margin-top: 50px;
   }
+/*   .lesson-title > h2 {
+    text-align: left;
+  } */
   .units-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -291,12 +299,25 @@
   }
 }
 @media screen and (min-width: 1280px) {
+  .lessons-title {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
   .lesson-card {
     width: 80%;
     height: 230px;
   }
   .lesson-card > a {
     width: 100%;
+  }
+  .lesson-title {
+    width: 75%;
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+  .lesson-title > h2 {
+    text-align: left;
   }
   .box-unit {
     max-width: 400px;

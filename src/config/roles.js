@@ -1,5 +1,5 @@
 export const ROLES = {
   Admin: 'Admin',
-  LevelOne: 'Nivel 1',
-  LevelTwo: 'Nivel 2'
+  LevelOne: 'Curso 1',
+  LevelTwo: 'Curso 2'
 }

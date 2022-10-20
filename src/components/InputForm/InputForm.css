@@ -19,6 +19,7 @@
 }
 .form-control > input::placeholder {
   font-family: var(--font-paragraph);
+  font-size: 13px;
   position: relative;
   left: 10px;
 }
