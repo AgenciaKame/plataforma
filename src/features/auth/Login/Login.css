@@ -139,6 +139,72 @@
 .aviso-momentaneo > p {
   margin: 10px 0;
 }
+.form-change-password {
+  margin: 50px 10% 80px 10%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+}
+.form-change-password > .form-data {
+  padding: 5px;
+}
+.form-change-password > .form-button {
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+.form-change-password > .form-button > button {
+  font-family: var(--font-paragraph);
+  background-color: #63c0bb;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  border: none;
+  cursor: pointer;
+}
+.success-div {
+  width: 80%;
+  max-width: 360px;
+  margin: 100px auto 50px;
+}
+.success-div > .message-box {
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.success-div > .message-box > img {
+  width: 40px;
+  object-fit: contain;
+}
+.success-div > .message-box > p {
+  font-family: var(--font-title);
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 36px;
+  padding: 15px 0;
+  text-align: center;
+}
+.success-div > button {
+  margin: 50px auto 0;
+  background-color: #63c0bb;
+  border: none;
+  outline: none;
+  border-radius: 52px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success-div > button > a {
+  font-family: var(--font-link);
+  color: #fff;
+  font-size: 18px;
+}
+
 @media screen and (min-width: 768px) {
   .aviso-momentaneo {
     width: 150px;
@@ -180,6 +246,10 @@
   }
   .login-form > .form-content > .login-btn > button {
     padding: 10px 15px;
+  }
+  .form-change-password {
+    margin: 50px auto;
+    width: 500px;
   }
 }
 @media screen and (min-width: 1024px) {

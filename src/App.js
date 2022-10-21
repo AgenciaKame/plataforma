@@ -14,18 +14,25 @@ import Prefetch from "./features/auth/Prefetch";
 import PersistLogin from "./features/auth/Login/PersistLogin";
 import RequireAuth from "./features/auth/RequireAuth";
 import { ROLES } from "./config/roles";
+import RecoverPassword from "./features/auth/Login/RecoverPassword";
+import PromptDone from "./features/auth/Login/PromptDone";
 
 function App() {
   const { pathname } = useLocation();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
         <Route index element={<Navigate to="login" replace />} />
         <Route path="login" element={<Login />} />
+        <Route path="cambiodeclave" element={<RecoverPassword />} />
+        <Route path="cambiodeclave/:id" element={<RecoverPassword />} />
+        <Route path="cambiodeclave/done" element={<PromptDone />} />
 
         {/* protected routes */}
         <Route element={<PersistLogin />}>
@@ -56,6 +63,9 @@ function App() {
           {/* End Require Auth */}
         </Route>
       </Route>
+
+      {/* Route redirect */}
+      <Route path="/*" element={<Navigate to='/' replace />} />
     </Routes>
   );
 }

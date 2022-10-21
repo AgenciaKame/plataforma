@@ -40,6 +40,26 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: [{ type: "User", id: "LIST" }],
     }),
+    sendEmail: builder.mutation({
+      query: (initialUserData) => ({
+        url: "/changePassword",
+        method: "POST",
+        body: {
+          ...initialUserData,
+        },
+      }),
+      invalidatesTags: (result, error, arg) => [{ type: "User", id: arg.id }],
+    }),
+    changePassword: builder.mutation({
+      query: (initialUserData) => ({
+        url: "/changePassword/confirm",
+        method: "POST",
+        body: {
+          ...initialUserData,
+        },
+      }),
+      invalidatesTags: (result, error, arg) => [{ type: "User", id: arg.id }],
+    }),
     updateUser: builder.mutation({
       query: (initialUserData) => ({
         url: "/users",
@@ -64,6 +84,8 @@ export const usersApiSlice = apiSlice.injectEndpoints({
 export const {
   useGetUsersQuery,
   useAddNewUserMutation,
+  useSendEmailMutation,
+  useChangePasswordMutation,
   useUpdateUserMutation,
   useDeleteUserMutation,
 } = usersApiSlice;
