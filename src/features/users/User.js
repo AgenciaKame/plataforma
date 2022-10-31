@@ -3,7 +3,7 @@ import * as Unicons from "@iconscout/react-unicons";
 
 /* import { useSelector } from 'react-redux'
 import { selectUserById } from './usersApiSlice' */
-
+import useWindowSize from "../../hooks/useWindowSize";
 import { useGetUsersQuery } from "./usersApiSlice";
 import { memo } from "react";
 
@@ -11,7 +11,7 @@ import "./users.css";
 
 const User = ({ userId }) => {
   /* const user = useSelector(state => selectUserById(state, userId)) */
-
+  const windowSize = useWindowSize()
   const { user } = useGetUsersQuery("usersList", {
     selectFromResult: ({ data }) => ({
       user: data?.entities[userId],
@@ -31,13 +31,18 @@ const User = ({ userId }) => {
         ))}{" "}
       </ul>
     );
+    
+    const date = new Date(user.createdAt)
+    const lastSession = date.toLocaleString()
 
     return (
       <div className="row row-user">
         <div className="body-user mr-1">
           {user.name} {user.lastName}
         </div>
+        {console.log(user.date)}
         <div className="body-user center">{userRolesList}</div>
+        {windowSize.width > 767 && <div className="body-user center text-ac">{user.date !== undefined ? user.date : lastSession}</div>}
         <div className="body-user center">
           <button onClick={handleEdit}>
             <Unicons.UilEdit color="#000000" />

@@ -14,7 +14,9 @@ const CardLesson = ({ image, title, children }) => {
   const [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    setLoaded(true);
+    setTimeout(() => {
+      setLoaded(true)
+    }, 300)
   }, []);
   return (
     <div className="lesson-card">
@@ -33,7 +35,7 @@ const CardLesson = ({ image, title, children }) => {
         </Link>
       ) : (
         <div style={{width: 'inherit', height: 'inherit', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff'}}>
-          <ClipLoader color="#000"/>
+          <ClipLoader color="#63c0bb"/>
         </div>
       )}
     </div>

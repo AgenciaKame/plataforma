@@ -42,6 +42,9 @@
 .body-user.center {
   justify-self: center;
 }
+.body-user.text-ac {
+  text-align: center;
+}
 .body-user.mr-1 {
   margin-right: 1em;
 }
@@ -132,4 +135,10 @@
   font-family: var(--font-link);
   color: #fff;
   font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .row {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
 }
